@@ -12,15 +12,14 @@ import DrawerNav from '../navigation/DrawarNav';
 const RootStack = createStackNavigator();
 
 
-function StackNav ({ navigation }: StackScreenProps<StackTabParamList>) {
+function StackNav({ navigation }: StackScreenProps<StackTabParamList>) {
     return (
         <RootStack.Navigator
             screenOptions={{
 
                 headerLeft: () =>
                     <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())}>
-
-                        <Ionicons name="menu" size={32} color="green" />
+                       <Ionicons name="menu" size={32} color="green" />
                     </TouchableOpacity>
             }}
         >
