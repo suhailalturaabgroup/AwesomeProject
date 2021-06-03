@@ -5,13 +5,14 @@ import Home from '../components/Home';
 import About from '../components/About';
 import Services from '../components/Services';
 import Contact from '../components/Contact';
+import StackNav from './StackNav';
 
 const Drawer = createDrawerNavigator();
 export default function DrawerNav() {
   
     return(
       <Drawer.Navigator>
-      <Drawer.Screen name="Home" component={Home} />
+      <Drawer.Screen name="Home" component={StackNav} />
       <Drawer.Screen name="About" component={About} />
       <Drawer.Screen name="Service" component={Services} />
       <Drawer.Screen name="Contact" component={Contact} />

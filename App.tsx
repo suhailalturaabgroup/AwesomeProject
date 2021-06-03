@@ -7,32 +7,18 @@ import About from './components/About';
 import TabNav from './navigation/TabNav';
 import { Ionicons } from '@expo/vector-icons';
 import DrawerNav from './navigation/DrawarNav';
+// import StackNav from './navigation/StackNav';
 const RootStack = createStackNavigator();
 
-
-
-function App({navigation}:StackScreenProps<RootStackParamList>) {
+function App({ navigation }: StackScreenProps<RootStackParamList, 'NotFound'>) {
 
   return (
 
      <NavigationContainer>
-       <RootStack.Navigator
-          screenOptions={{
-
-            headerLeft: () => 
-            <TouchableOpacity onPress={()=> navigation.dispatch(DrawerActions.openDrawer())}>
-              
-              <Ionicons name="menu" size={32} color="green" />
-            </TouchableOpacity>
-          }}
-       >
-       <RootStack.Screen name="Home" component={DrawerNav}
-          
-         
-       />
-       <RootStack.Screen name="About" component={About} />
-       </RootStack.Navigator>
-
+      
+            <DrawerNav/>
+        
+        
      </NavigationContainer>
     
       
