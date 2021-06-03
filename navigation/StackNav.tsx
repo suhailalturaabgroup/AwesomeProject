@@ -15,13 +15,21 @@ const RootStack = createStackNavigator();
 function StackNav({ navigation }: StackScreenProps<StackTabParamList>) {
     return (
         <RootStack.Navigator
-            screenOptions={{
+        screenOptions={{
+            headerStyle: {
+              backgroundColor: 'tomato',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
 
-                headerLeft: () =>
+            headerLeft: () =>
                     <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())}>
-                       <Ionicons name="menu" size={32} color="green" />
+                       <Ionicons name="menu" size={32} color="#000" />
                     </TouchableOpacity>
-            }}
+          }}
+            
         >
             <RootStack.Screen name="Home" component={TabNav}
 
