@@ -9,7 +9,10 @@ function Home({ navigation }: StackScreenProps<RootStackParamList, 'NotFound'>) 
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Home Screen</Text>
       
-       <Button title="open" onPress={()=> navigation.dispatch(DrawerActions.openDrawer())} />
+      <TouchableOpacity onPress={()=> navigation.dispatch(DrawerActions.openDrawer())}>
+              
+              <Ionicons name="menu" size={32} color="green" />
+            </TouchableOpacity>
         {/* <Button title="click" onPress={() => navigation.navigate('NotFound')}/> */}
    
     </View>

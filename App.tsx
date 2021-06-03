@@ -6,6 +6,7 @@ import { StackTabParamList, RootStackParamList } from './types';
 import About from './components/About';
 import TabNav from './navigation/TabNav';
 import { Ionicons } from '@expo/vector-icons';
+import DrawerNav from './navigation/DrawarNav';
 const RootStack = createStackNavigator();
 
 
@@ -25,7 +26,7 @@ function App({navigation}:StackScreenProps<RootStackParamList>) {
             </TouchableOpacity>
           }}
        >
-       <RootStack.Screen name="Home" component={TabNav}
+       <RootStack.Screen name="Home" component={DrawerNav}
           
          
        />
