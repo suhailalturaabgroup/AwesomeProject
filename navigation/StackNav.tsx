@@ -12,12 +12,14 @@ import DrawerNav from '../navigation/DrawarNav';
 const RootStack = createStackNavigator();
 
 
+
+
 function StackNav({ navigation }: StackScreenProps<StackTabParamList>) {
     return (
         <RootStack.Navigator
         screenOptions={{
             headerStyle: {
-              backgroundColor: 'tomato',
+              backgroundColor: '#ff7f50',
             },
             headerTintColor: '#fff',
             headerTitleStyle: {

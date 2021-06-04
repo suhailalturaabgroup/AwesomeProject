@@ -12,7 +12,8 @@ const PassFun = (props: any)=> {
 }
 
 
-function About ({ navigation }: StackScreenProps<RootStackParamList, 'NotFound'>) {
+function About ({ navigation }: any) {
+
   const [count, setCount] = useState(0);
 
   return(
@@ -33,7 +34,7 @@ function About ({ navigation }: StackScreenProps<RootStackParamList, 'NotFound'>
     <View>
     <PassFun name="Suhail"  lname=" Ahmed" />
   
-    <Button title="go Home" onPress={()=> navigation.navigate('About')} />
+    <Button title="go Contact" onPress={()=> navigation.navigate('Contact')} />
     </View>
   </View>
   )

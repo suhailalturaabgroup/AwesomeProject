@@ -7,20 +7,29 @@ import About from './components/About';
 import TabNav from './navigation/TabNav';
 import { Ionicons } from '@expo/vector-icons';
 import DrawerNav from './navigation/DrawarNav';
-// import StackNav from './navigation/StackNav';
+import { AppearanceProvider, useColorScheme } from 'react-native-appearance';
 const RootStack = createStackNavigator();
 
-function App({ navigation }: StackScreenProps<RootStackParamList, 'NotFound'>) {
+const MyTheme = {
+  dark: false,
+  colors: {
+    primary: 'rgb(255, 45, 85)',
+    background: 'rgb(242, 242, 242)',
+    card: 'rgb(255, 255, 255)',
+    text: 'rgb(28, 28, 30)',
+    border: 'rgb(199, 199, 204)',
+    notification: 'rgb(255, 69, 58)',
+  },
+};
 
-  return (
-
-     <NavigationContainer>
-      
-            <DrawerNav/>
-        
-        
-     </NavigationContainer>
-    
+function App({ navigation }: any ){
+   
+   return (
+    <AppearanceProvider>
+      <NavigationContainer theme={MyTheme}>        
+        <DrawerNav/>         
+      </NavigationContainer>
+      </AppearanceProvider>
       
    
   );

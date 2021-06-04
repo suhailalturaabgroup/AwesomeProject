@@ -7,6 +7,7 @@ import Services from '../components/Services'
 import Contact from '../components/Contact';
 import Home from '../components/Home';
 import StackNav from './StackNav';
+
 const Tab = createBottomTabNavigator();
 export default function TabNav() {
   
@@ -17,9 +18,7 @@ export default function TabNav() {
         
       
       >
-      <Tab.Screen name="Home" component={Home}
-         
-      />
+      <Tab.Screen name="Home" component={Home}/>
       <Tab.Screen name="About" component={About} />
       <Tab.Screen name="Service" component={Services} />
       <Tab.Screen name="Contact" component={Contact} />

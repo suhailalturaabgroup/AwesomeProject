@@ -1,27 +1,16 @@
-import React, {useState} from 'react';
-import {View, Text, StyleSheet,Button, Image} from 'react-native';
+import React from 'react';
+import { View, Button, Text, StyleSheet } from 'react-native';
 
-const Services = () => {
-    return(
-        <View>
-            <Text>Services</Text>
+export default function Services({ route, navigation }: any) {
+
+    // const { userId } = route.params;
+    // const { userName } = route.params;
+
+    return (
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+            <Text style={{ fontSize: 20 }}>Details Screen</Text>
+            <Button title="ClickMe!" onPress={()=>navigation.navigate('About')} />
+            
         </View>
-    )
+    );
 }
-
-export default Services
-
-const styles = StyleSheet.create({
-
-  header: {
-      marginTop:40,
-      textAlign: "center",
-      color: 'red',
-      fontSize:15,
-      backgroundColor: "#cecece",
-      width: "100%"
-
-      
-  }  
-
-})
