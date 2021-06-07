@@ -32,9 +32,8 @@ function App() {
    return (
     
     <NavigationContainer>    
-        <StackNav />      
-     
-        </NavigationContainer> 
+        <StackNav />     
+     </NavigationContainer> 
       
    
   );

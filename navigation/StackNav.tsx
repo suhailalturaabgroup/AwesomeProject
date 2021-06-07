@@ -6,11 +6,10 @@ import { StackTabParamList, RootStackParamList } from '../types';
 import About from '../components/About';
 import TabNav from '../navigation/TabNav';
 import { Ionicons } from '@expo/vector-icons';
-
 import Services from '../components/Services';
 import Contact from '../components/Contact';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-
+import CustomDrawer from './CustomDrawer';
 const RootStack = createStackNavigator();
 
 function StackNav({ navigation }: StackScreenProps<StackTabParamList>) {
@@ -41,7 +40,7 @@ function StackNav({ navigation }: StackScreenProps<StackTabParamList>) {
             borderBottomColor: '#f2f42'
 
           }
-          
+
 
         }}
 
@@ -57,21 +56,21 @@ function StackNav({ navigation }: StackScreenProps<StackTabParamList>) {
 
 const RootStack1 = createStackNavigator();
 
-function StackNav1({navigation}: any) {
+function StackNav1({ navigation }: any) {
   return (
     <RootStack1.Navigator
-    screenOptions={{
+      screenOptions={{
 
-      headerTitleStyle: {
-        fontWeight: 'bold',
-      },
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
 
 
-      headerLeft: () =>
-        <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())}>
-          <Ionicons name="menu" size={32} color="#000" />
-        </TouchableOpacity>
-    }}
+        headerLeft: () =>
+          <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())}>
+            <Ionicons name="menu" size={32} color="#000" />
+          </TouchableOpacity>
+      }}
     >
       <RootStack1.Screen
         options={{
@@ -85,7 +84,7 @@ function StackNav1({navigation}: any) {
           }
 
         }}
-      name="About" component={About}></RootStack1.Screen>
+        name="About" component={About}></RootStack1.Screen>
 
     </RootStack1.Navigator>
   )
@@ -94,21 +93,21 @@ function StackNav1({navigation}: any) {
 
 const RootStack2 = createStackNavigator();
 
-function StackNav2({navigation}: any) {
+function StackNav2({ navigation }: any) {
   return (
     <RootStack2.Navigator
-    screenOptions={{
+      screenOptions={{
 
-      headerTitleStyle: {
-        fontWeight: 'bold',
-      },
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
 
 
-      headerLeft: () =>
-        <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())}>
-          <Ionicons name="menu" size={32} color="#000" />
-        </TouchableOpacity>
-    }}
+        headerLeft: () =>
+          <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())}>
+            <Ionicons name="menu" size={32} color="#000" />
+          </TouchableOpacity>
+      }}
     >
       <RootStack2.Screen
         options={{
@@ -122,7 +121,7 @@ function StackNav2({navigation}: any) {
           }
 
         }}
-      name="Service" component={Services}></RootStack2.Screen>
+        name="Service" component={Services}></RootStack2.Screen>
     </RootStack2.Navigator>
   )
 
@@ -131,21 +130,21 @@ function StackNav2({navigation}: any) {
 
 const RootStack3 = createStackNavigator();
 
-function StackNav3({navigation}: any) {
+function StackNav3({ navigation }: any) {
   return (
     <RootStack3.Navigator
-    screenOptions={{
+      screenOptions={{
 
-      headerTitleStyle: {
-        fontWeight: 'bold',
-      },
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
 
 
-      headerLeft: () =>
-        <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())}>
-          <Ionicons name="menu" size={32} color="#000" />
-        </TouchableOpacity>
-    }}
+        headerLeft: () =>
+          <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())}>
+            <Ionicons name="menu" size={32} color="#000" />
+          </TouchableOpacity>
+      }}
     >
       <RootStack3.Screen
         options={{
@@ -159,7 +158,7 @@ function StackNav3({navigation}: any) {
           }
 
         }}
-      name="Contact" component={Contact}></RootStack3.Screen>
+        name="Contact" component={Contact}></RootStack3.Screen>
     </RootStack3.Navigator>
   )
 
@@ -171,16 +170,15 @@ function DrawerNav() {
   return (
 
     <Drawer.Navigator
-    openByDefault={false}
-    // drawerPosition={'right'}
+      // drawerContent={({props}: any) => <CustomDrawer {...props} />}
+      // openByDefault={false}
       drawerContentOptions={{
-        
         activeBackgroundColor: "#F97A5E",
         activeTintColor: 'white',
-        itemStyle: {marginTop: 20},
-        labelStyle:{fontSize:16},
-        style:{backgroundColor: '#fff'},
-        
+        itemStyle: { marginTop: 20 },
+        labelStyle: { fontSize: 16 },
+        style: { backgroundColor: '#fff' },
+
       }}
     >
       <Drawer.Screen name="Home" component={StackNav} />

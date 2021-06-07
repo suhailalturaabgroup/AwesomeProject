@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Button, Text, StyleSheet } from 'react-native';
 
-export default function Services({ route, navigation }: any) {
+export default function Services({navigation }: any) {
 
     // const { userId } = route.params;
     // const { userName } = route.params;
