@@ -7,40 +7,108 @@ import About from '../components/About';
 import Home from '../components/Home';
 import TabNav from '../navigation/TabNav';
 import { Ionicons } from '@expo/vector-icons';
-import DrawerNav from '../navigation/DrawarNav';
+// import DrawerNav from '../navigation/DrawarNav';
+import Services from '../components/Services';
+import Contact from '../components/Contact';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 const RootStack = createStackNavigator();
 
-
-
-
 function StackNav({ navigation }: StackScreenProps<StackTabParamList>) {
-    return (
-        <RootStack.Navigator
-        screenOptions={{
-            headerStyle: {
-              backgroundColor: '#ff7f50',
-            },
-            headerTintColor: '#fff',
-            headerTitleStyle: {
-              fontWeight: 'bold',
-            },
+  return (
+    <RootStack.Navigator
+      screenOptions={{
 
-            headerLeft: () =>
-                    <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())}>
-                       <Ionicons name="menu" size={32} color="#000" />
-                    </TouchableOpacity>
-          }}
-            
-        >
-            <RootStack.Screen name="Home" component={TabNav}
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
 
 
-            />
-            <RootStack.Screen name="About" component={About} />
-        </RootStack.Navigator>
-    )
+        headerLeft: () =>
+          <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())}>
+            <Ionicons name="menu" size={32} color="#000" />
+          </TouchableOpacity>
+      }}
+
+    >
+      <RootStack.Screen name="Home" component={TabNav}
+
+        options={{
+          title: "Home Page",
+          headerTintColor: '#fff',
+          headerStyle: {
+            backgroundColor: 'tomato',
+            borderBottomWidth: 3,
+            borderBottomColor: '#f2f42'
+
+          }
+
+        }}
+
+
+      />
+
+    </RootStack.Navigator>
+  )
+
 }
 
 
-export default StackNav;
+
+const RootStack1 = createStackNavigator();
+
+function StackNav1() {
+  return (
+    <RootStack1.Navigator>
+      <RootStack1.Screen name="About" component={About}></RootStack1.Screen>
+
+    </RootStack1.Navigator>
+  )
+
+}
+
+const RootStack2 = createStackNavigator();
+
+function StackNav2() {
+  return (
+    <RootStack2.Navigator>
+      <RootStack2.Screen name="Service" component={Services}></RootStack2.Screen>
+    </RootStack2.Navigator>
+  )
+
+}
+
+
+const RootStack3 = createStackNavigator();
+
+function StackNav3() {
+  return (
+    <RootStack3.Navigator>
+      <RootStack3.Screen name="Contact" component={Contact}></RootStack3.Screen>
+    </RootStack3.Navigator>
+  )
+
+}
+
+const Drawer = createDrawerNavigator();
+function DrawerNav() {
+
+  return (
+
+    <Drawer.Navigator>
+      <Drawer.Screen name="Home" component={StackNav} />
+      <Drawer.Screen name="About" component={StackNav1} />
+      <Drawer.Screen name="Services" component={StackNav2} />
+      <Drawer.Screen name="Contact" component={StackNav3} />
+
+
+    </Drawer.Navigator>
+
+
+  )
+}
+
+
+
+
+export default DrawerNav;

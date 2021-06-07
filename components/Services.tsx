@@ -9,7 +9,7 @@ export default function Services({ route, navigation }: any) {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Text style={{ fontSize: 20 }}>Details Screen</Text>
-            <Button title="ClickMe!" onPress={()=>navigation.navigate('About')} />
+            <Button title="Service" onPress={()=>navigation.navigate('About')} />
             
         </View>
     );

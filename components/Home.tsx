@@ -4,13 +4,14 @@ import { createStackNavigator, StackScreenProps } from '@react-navigation/stack'
 import { RootStackParamList } from '../types';
 import { Ionicons } from '@expo/vector-icons'; 
 import { NavigationContainer, DrawerActions, StackActions, } from '@react-navigation/native';
-function Home({ navigation }: StackScreenProps<RootStackParamList, 'NotFound'>) {
+function Home( {navigation }: StackScreenProps<RootStackParamList, 'About'>) {
+  
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-      
+        <Text>Home Page</Text>
       
         {/* <Button title="click" onPress={() => navigation.navigate('NotFound')}/> */}
+        <Button title="click" onPress={() => navigation.navigate('About')}/>
    
     </View>
   );
