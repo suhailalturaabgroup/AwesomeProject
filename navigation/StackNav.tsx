@@ -38,10 +38,7 @@ function StackNav({ navigation }: StackScreenProps<StackTabParamList>) {
             backgroundColor: 'tomato',
             borderBottomWidth: 3,
             borderBottomColor: '#f2f42'
-
           }
-
-
         }}
 
 

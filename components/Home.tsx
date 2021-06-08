@@ -8,13 +8,13 @@ import Slider from './Slider';
 function Home( {navigation }: StackScreenProps<RootStackParamList, 'About'>) {
   
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View>
           <Slider />
-        {/* <Text>Home Page</Text> */}
-      
-        {/* <Button title="click" onPress={() => navigation.navigate('NotFound')}/> */}
-        <Button title="click" onPress={() => navigation.navigate('About')}/>
-   
+
+          <View>
+            <Text style={styles.text}>Welcome Our App</Text>
+          </View>
+           
     </View>
   );
 }
@@ -33,7 +33,7 @@ header: {
 
 text: {
   textAlign:"center",
-  color: "red",
+  color: "black",
   fontSize: 20
 
 },
