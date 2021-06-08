@@ -8,7 +8,8 @@ function CustomDrawer({props}: any){
     return(
 
         <DrawerContentScrollView {...props}>
-            {/* <DrawerItemList {...props}/> */}
+            <DrawerItemList {...props}/>
+            
             
         </DrawerContentScrollView>
       

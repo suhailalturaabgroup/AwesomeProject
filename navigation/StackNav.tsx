@@ -169,7 +169,7 @@ function DrawerNav() {
 
   return (
 
-    <Drawer.Navigator
+    <Drawer.Navigator initialRouteName="Home"
       // drawerContent={({props}: any) => <CustomDrawer {...props} />}
       // openByDefault={false}
       drawerContentOptions={{
@@ -177,7 +177,7 @@ function DrawerNav() {
         activeTintColor: 'white',
         itemStyle: { marginTop: 20 },
         labelStyle: { fontSize: 16 },
-        style: { backgroundColor: '#fff' },
+        style: { backgroundColor: '#fff'},
 
       }}
     >
