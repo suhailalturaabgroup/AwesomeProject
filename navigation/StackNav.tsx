@@ -1,15 +1,16 @@
 import * as React from 'react';
-import { NavigationContainer, DrawerActions, StackActions, } from '@react-navigation/native';
+import { NavigationContainer, DrawerActions, StackActions,  RouteProp} from '@react-navigation/native';
 import { StyleSheet, Text, Button, View, TouchableOpacity } from 'react-native';
-import { createStackNavigator, StackScreenProps } from '@react-navigation/stack';
-import { StackTabParamList, RootStackParamList } from '../types';
+import { createStackNavigator, StackScreenProps,StackNavigationProp } from '@react-navigation/stack';
+import { StackTabParamList, RootStackParamList, DrawerParamList } from '../types';
 import About from '../components/About';
 import TabNav from '../navigation/TabNav';
 import { Ionicons } from '@expo/vector-icons';
 import Services from '../components/Services';
 import Contact from '../components/Contact';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createDrawerNavigator, DrawerContentComponentProps, DrawerNavigationProp } from '@react-navigation/drawer';
 import CustomDrawer from './CustomDrawer';
+
 const RootStack = createStackNavigator();
 
 function StackNav({ navigation }: StackScreenProps<StackTabParamList>) {
@@ -167,8 +168,8 @@ function DrawerNav() {
   return (
 
     <Drawer.Navigator initialRouteName="Home"
-      // drawerContent={({props}: any) => <CustomDrawer {...props} />}
-      // openByDefault={false}
+      drawerContent={(props) => <CustomDrawer {...props} />}
+      openByDefault={false}
       drawerContentOptions={{
         activeBackgroundColor: "#F97A5E",
         activeTintColor: 'white',

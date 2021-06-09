@@ -5,12 +5,12 @@ import { RootStackParamList } from '../types';
 import { Ionicons } from '@expo/vector-icons'; 
 import { NavigationContainer, DrawerActions, StackActions, } from '@react-navigation/native';
 import Slider from './Slider';
+
 function Home( {navigation }: StackScreenProps<RootStackParamList, 'About'>) {
   
   return (
     <View>
-          <Slider />
-
+          <Slider />         
           <View>
             <Text style={styles.text}>Welcome Our App</Text>
           </View>
@@ -39,7 +39,6 @@ text: {
 },
 
 para: {
-
   margin:5,
   padding:5,
   textAlign: "justify"
