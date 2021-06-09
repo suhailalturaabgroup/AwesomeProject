@@ -5,17 +5,15 @@ import { RootStackParamList } from '../types';
 import { Ionicons } from '@expo/vector-icons'; 
 import { NavigationContainer, DrawerActions, StackActions, } from '@react-navigation/native';
 import Slider from './Slider';
+import Login from './Login';
 
-function Home( {navigation }: StackScreenProps<RootStackParamList, 'About'>) {
-  
+
+function Home( {}: StackScreenProps<RootStackParamList, 'About'>) {
+
+ 
   return (
-    <View>
-          <Slider />         
-          <View>
-            <Text style={styles.text}>Welcome Our App</Text>
-          </View>
-           
-    </View>
+            <Login/>
+         
   );
 }
 

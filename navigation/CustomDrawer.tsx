@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { Button, TouchableOpacity, SafeAreaView, StyleSheet, Image, Linking, View, Text } from 'react-native';
 import { DrawerContentScrollView, DrawerItem,  DrawerItemList } from '@react-navigation/drawer';
-import { NavigationContainer, useNavigation  } from '@react-navigation/native';
+// import { NavigationContainer, useNavigation  } from '@react-navigation/native';
 import { createDrawerNavigator, DrawerContentComponentProps, DrawerNavigationProp } from '@react-navigation/drawer';
 import { DrawerParamList } from '../types';
+
 
 const proileImage = 'react_logo.png';
 const BASE_PATH =
@@ -15,9 +16,15 @@ function CustomDrawer(props: DrawerContentComponentProps<DrawerParamList>){
             <DrawerContentScrollView {...props}>
             <Image
                     source={{uri: BASE_PATH + proileImage}}
-                    style={{width:90, height:90, alignSelf: "center"}}
+                    style={styles.logo}
                 />
             <DrawerItemList {...props}/>
+
+            <View
+                        style={{
+                        borderBottomColor: '#ccc',
+                        borderBottomWidth: 2
+                    }}/>
             
             <DrawerItem
                 label="Visit Us"
@@ -35,3 +42,15 @@ function CustomDrawer(props: DrawerContentComponentProps<DrawerParamList>){
    
 
   export default CustomDrawer;
+
+
+  const styles = StyleSheet.create({
+
+    logo: {
+        resizeMode: 'center',
+        width: 100,
+        height: 100,
+        borderRadius: 100 / 2,
+        alignSelf: 'center',
+      },
+  })
