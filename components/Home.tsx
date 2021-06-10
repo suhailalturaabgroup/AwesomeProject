@@ -10,9 +10,26 @@ import Login from './Login';
 
 function Home( {}: StackScreenProps<RootStackParamList, 'About'>) {
 
+  function MyFun() {
+
+    return (
+     
+       <Slider/>
+        
+      
+    )
+    
+  }
  
   return (
-            <Login/>
+
+          
+           
+          <Login/>
+          
+          
+      
+            
          
   );
 }
