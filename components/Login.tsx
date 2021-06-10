@@ -1,8 +1,8 @@
-import React, {useState, useCallback, useRef, useEffect} from 'react';
-import {FlatList, View, Text, Button, TouchableOpacity, StyleSheet, TextInput , Dimensions, Image} from 'react-native';
-import { color } from 'react-native-reanimated';
-import { vertical } from 'react-native-swiper-flatlist/src/themes';
+import React, { useState, useCallback, useRef, useEffect } from 'react';
+import { FlatList, View, Text, Button, TouchableOpacity, StyleSheet, TextInput, Dimensions, Image } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const { width: windowWidth, height: windowHeight } = Dimensions.get("window");
 const slideList = Array.from({ length: 30 }).map((_, i) => {
@@ -15,38 +15,47 @@ const slideList = Array.from({ length: 30 }).map((_, i) => {
 });
 
 
-function  InputBox() {
-  return(
-    <View style={{flex:1, flexDirection: "column", backgroundColor: ""}}>
-      <View style={styles.text}>
-      <Text style={styles.innerText1}>Get groceries & food delivered</Text>
-      <Text style={styles.innerText}>Login Or SignUp to place your order</Text>
-      </View>
-      <View style={{ flex: 1, flexDirection: "row"}} >
-      <TextInput
-        style={styles.input}
-        // onChangeText={}
-        // value={5}
-        placeholder="Enter Number"
-        keyboardType="numeric"
-        maxLength={10}
-      />
-      <TouchableOpacity style={styles.Inputbutton}>
-        <AntDesign style={{marginTop: 4}} name="arrowright" size={28} color="#fff"
-         onPress={()=> alert('clicked Me!') }
-         />
-      
-      </TouchableOpacity>
-      
-      </View>
-      
-      <View>
-      <Text>By continuing, I agreeto the term of Use & Privacy Policy</Text>
-      </View>
-      
+function InputBox() {
+  const [text, setText] = useState('');
+  return (
+
+    <View style={{ flex: 1, flexDirection: "column", backgroundColor: "" }}>
+      <SafeAreaView>
+        <ScrollView>
+          <View style={styles.text}>
+            <Text style={styles.innerText1}>Get groceries & food delivered</Text>
+            <Text style={styles.innerText}>Login Or SignUp to place your order</Text>
+          </View>
+          <View style={{ flex: 1, flexDirection: "row", backgroundColor: '' }} >
+            <TextInput
+              style={styles.input}
+               onChangeText={text => setText(text)}
+              // value={5}              
+              placeholder="+91"
+              keyboardType="numeric"
+              maxLength={10}
+              placeholderTextColor='#010101'
+            />
+            <TouchableOpacity style={styles.Inputbutton}>
+              <AntDesign style={{ marginTop: 9 }} name="arrowright" size={24} color="#fff"
+                onPress={() => alert('clicked Me!')}
+              />
+
+            </TouchableOpacity>
+
+          </View>
+
+          <View>
+            <Text style={styles.innerText2}>By continuing, I 
+            agree to the <Text style={styles.innerText3}>term of Use
+            <Text style={{color: "#838282"}}> &</Text> Privacy Policy</Text></Text>
+          </View>
+        </ScrollView>
+      </SafeAreaView>
     </View>
+
   )
-  
+
 }
 
 function Slide({ data }: any) {
@@ -55,27 +64,27 @@ function Slide({ data }: any) {
       style={{
         height: windowHeight,
         width: windowWidth,
-        backgroundColor:"",
+        backgroundColor: "",
         justifyContent: "center",
         alignItems: "center",
         marginTop: 0,
         flex: 1,
         flexDirection: "column"
-        
+
       }}
     >
       <Image
         source={{ uri: data.image }}
         style={{ width: windowWidth * 1, height: windowHeight * 0.4 }}
       />
-      <Text style={{ fontSize: 18 }}>{data.title}</Text>
-      <Text style={{ fontSize: 14 }}>{data.subtitle}</Text>
-      
-      
-      <InputBox/>
-    
+      {/* <Text style={{ fontSize: 18 }}>{data.title}</Text>
+      <Text style={{ fontSize: 14 }}>{data.subtitle}</Text> */}
+
+
+      <InputBox />
+
     </View>
-    
+
   );
 }
 
@@ -102,11 +111,11 @@ function Login() {
   }, [index]);
 
   return (
-    
+
     <FlatList
-    
+
       data={slideList}
-      style={{ flex: 1, marginBottom:0 }}
+      style={{ flex: 1, marginBottom: 0 }}
       renderItem={({ item }) => {
         return <Slide data={item} />;
       }}
@@ -114,13 +123,13 @@ function Login() {
       horizontal
       showsHorizontalScrollIndicator={true}
       onScroll={onScroll}
-      
+
     />
 
 
-          
-    
-    
+
+
+
   );
 
 
@@ -134,35 +143,55 @@ export default Login;
 
 const styles = StyleSheet.create({
   input: {
-    height: 40,
+    height: 45,
     margin: 12,
-    width:280,
+    width: 280,
+    fontSize:18,
+    borderColor: "#ccc",
+    backgroundColor: "#F4F2F2",
     borderWidth: 1,
-    marginTop:0
+    marginTop: 0,
+    borderRadius: 7
   },
 
-Inputbutton : {
-  backgroundColor: '#07B41C',
-  width:70,
-  height:40,
-  marginTop:0,
-  alignItems: "center"
+  Inputbutton: {
+    backgroundColor: '#07B41C',
+    width: 50,
+    height: 45,
+    marginTop: 0,
+    alignItems: "center",
+    borderRadius: 7
 
-},
+  },
 
-text: {
-  flexDirection: "column", marginBottom:10, marginLeft:10
-},
+  text: {
+    flexDirection: "column",
+    marginBottom: 10,
+    marginLeft: 10
+  },
 
-innerText: {
-  color: "#838282",
-  marginTop:5
-},
+  innerText: {
+    color: "#838282",
+    marginTop: 5
+  },
 
-innerText1: {
-  color: "#0B0B0B",
-  fontSize:16,
-  marginTop:5
-}
+  innerText1: {
+    color: "#0B0B0B",
+    fontSize: 16,
+    marginTop: 5
+  },
+
+  innerText2: {
+    color: "#838282",
+    fontSize: 13,
+    marginTop: 2,
+    marginLeft: 11
+  },
+
+  innerText3: {
+    color: "#07B41C",
+    fontSize: 13,
+    marginTop: 5
+  }
 
 });
