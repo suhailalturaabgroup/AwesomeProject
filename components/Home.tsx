@@ -4,32 +4,18 @@ import { createStackNavigator, StackScreenProps } from '@react-navigation/stack'
 import { RootStackParamList } from '../types';
 import { Ionicons } from '@expo/vector-icons'; 
 import { NavigationContainer, DrawerActions, StackActions, } from '@react-navigation/native';
-import Slider from './Slider';
-import Login from './Login';
+import MySlider from './MySlider';
 
 
 function Home( {}: StackScreenProps<RootStackParamList, 'About'>) {
 
-  function MyFun() {
-
-    return (
-     
-       <Slider/>
-        
-      
-    )
-    
-  }
  
   return (
-
-          
            
-          <Login/>
-          
-          
+  
       
-            
+            <MySlider/>
+          
          
   );
 }

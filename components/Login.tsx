@@ -1,8 +1,9 @@
 import React, { useState, useCallback, useRef, useEffect } from 'react';
-import { FlatList, View, Text, Button, TouchableOpacity, StyleSheet, TextInput, Dimensions, Image } from 'react-native';
+import { FlatList, View, Text, ScrollView, SafeAreaView, Button, TouchableOpacity, StyleSheet, TextInput, Dimensions, Image } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { ScrollView } from 'react-native-gesture-handler';
+
+
+import { useFonts } from 'expo-font';
 
 const { width: windowWidth, height: windowHeight } = Dimensions.get("window");
 const slideList = Array.from({ length: 30 }).map((_, i) => {
@@ -16,7 +17,15 @@ const slideList = Array.from({ length: 30 }).map((_, i) => {
 
 
 function InputBox() {
-  const [text, setText] = useState('');
+  const [loaded] = useFonts({
+    Montserrat: require('../assets/fonts/Montserrat-Thin.ttf'),
+  });
+  
+
+  if (!loaded) {
+    return null;
+  }
+  // const [text, setText] = useState('');
   return (
 
     <View style={{ flex: 1, flexDirection: "column", backgroundColor: "" }}>
@@ -26,15 +35,16 @@ function InputBox() {
             <Text style={styles.innerText1}>Get groceries & food delivered</Text>
             <Text style={styles.innerText}>Login Or SignUp to place your order</Text>
           </View>
-          <View style={{ flex: 1, flexDirection: "row", backgroundColor: '' }} >
+          <View style={{ flex: 1, flexDirection: "row"}} >
             <TextInput
               style={styles.input}
-               onChangeText={text => setText(text)}
+              //  onChangeText={text => setText(text)}
               // value={5}              
-              placeholder="+91"
+              placeholder=" +91"
               keyboardType="numeric"
               maxLength={10}
-              placeholderTextColor='#010101'
+              placeholderTextColor='#4E4E4E'
+              
             />
             <TouchableOpacity style={styles.Inputbutton}>
               <AntDesign style={{ marginTop: 9 }} name="arrowright" size={24} color="#fff"
@@ -155,7 +165,7 @@ const styles = StyleSheet.create({
   },
 
   Inputbutton: {
-    backgroundColor: '#07B41C',
+    backgroundColor: '#FAFAFA',
     width: 50,
     height: 45,
     marginTop: 0,
@@ -172,26 +182,31 @@ const styles = StyleSheet.create({
 
   innerText: {
     color: "#838282",
-    marginTop: 5
+    marginTop: 5,
+    fontFamily: 'Montserrat-Thin',
+    fontSize: 13,
   },
 
   innerText1: {
     color: "#0B0B0B",
     fontSize: 16,
-    marginTop: 5
+    marginTop: 5,
+    fontFamily: 'Montserrat-Thin',
   },
 
   innerText2: {
     color: "#838282",
-    fontSize: 13,
+    fontSize: 12,
     marginTop: 2,
-    marginLeft: 11
+    marginLeft: 13,
+    fontFamily: 'Montserrat-Thin',
   },
 
   innerText3: {
-    color: "#07B41C",
-    fontSize: 13,
-    marginTop: 5
+    color: "#00B04E",
+    fontSize: 12,
+    marginTop: 5,
+    fontFamily: 'Montserrat-Thin',
   }
 
 });

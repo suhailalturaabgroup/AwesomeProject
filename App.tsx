@@ -7,6 +7,7 @@ import { StackTabParamList, RootStackParamList } from './types';
 // import TabNav from './navigation/TabNav';
 // import { Ionicons } from '@expo/vector-icons';
 import StackNav from './navigation/StackNav';
+import Login from './components/Login';
 
 // import { AppearanceProvider, useColorScheme } from 'react-native-appearance';
 const RootStack = createStackNavigator();
@@ -32,7 +33,8 @@ function App() {
    return (
     
     <NavigationContainer>    
-        <StackNav />     
+        {/* <Login />  */}
+        <StackNav/>
      </NavigationContainer> 
       
    
