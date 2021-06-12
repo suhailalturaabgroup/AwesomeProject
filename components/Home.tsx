@@ -7,14 +7,16 @@ import { NavigationContainer, DrawerActions, StackActions, } from '@react-naviga
 import MySlider from './MySlider';
 
 
-function Home( {}: StackScreenProps<RootStackParamList, 'About'>) {
+function Home() {
 
  
   return (
            
   
-      
-            <MySlider/>
+          
+              <MySlider/>
+           
+            
           
          
   );

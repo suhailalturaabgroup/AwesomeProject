@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, Button} from 'react-native';
+import {View, Text, StyleSheet, Image, Button} from 'react-native';
 import { RootStackParamList } from '../types';
 import { createStackNavigator, StackScreenProps } from '@react-navigation/stack';
 const PassFun = (props: any)=> {
@@ -13,12 +13,12 @@ const PassFun = (props: any)=> {
 
 
 function About ({ navigation }: any) {
-
   const [count, setCount] = useState(0);
 
   return(
     <View>
     
+    {/* <Image style={{width:200, height:200}} source={{uri: 'https://i.imgur.com/UPrs1EWl.jpg'}}/> */}
     <Text style={{textAlign: "center", fontSize:20}}>{count}</Text>
     <View style={styles.container}>
     <Button color="green" title="+" onPress={()=> setCount(count + 1)} />
@@ -35,6 +35,7 @@ function About ({ navigation }: any) {
     <PassFun name="Suhail"  lname=" Ahmed" />
   
     <Button title="go Contact" onPress={()=> navigation.navigate('Contact')} />
+    
     </View>
   </View>
   )
