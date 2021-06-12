@@ -1,26 +1,15 @@
-import React, { useState, useCallback, useRef, useEffect } from 'react';
-import { FlatList, View, Text, ScrollView, SafeAreaView, Button, TouchableOpacity, StyleSheet, TextInput, Dimensions, Image } from 'react-native';
-import { AntDesign } from '@expo/vector-icons';
-
-
+import Carousel, { ParallaxImage } from 'react-native-snap-carousel';
+import * as React from 'react'
+import { Text, View, Dimensions, ScrollView, Image, TextInput, SafeAreaView, StyleSheet, Platform, TouchableOpacity } from 'react-native';
 import { useFonts } from 'expo-font';
+import { AntDesign } from '@expo/vector-icons';
+const { width: screenWidth } = Dimensions.get('window')
 
-const { width: windowWidth, height: windowHeight } = Dimensions.get("window");
-const slideList = Array.from({ length: 30 }).map((_, i) => {
-  return {
-    id: i,
-    image: `https://picsum.photos/1440/2842?random=${i}`,
-    // title: `This is the title! ${i + 1}`,
-    // subtitle: `This is the subtitle ${i + 1}!`,
-  };
-});
-
-
-function InputBox() {
+function LoginInputBox() {
   const [loaded] = useFonts({
-    Montserrat: require('../assets/fonts/Montserrat-Thin.ttf'),
+    Montserrat: require('../assets/fonts/Montserrat-Thin.ttf')
   });
-  
+
 
   if (!loaded) {
     return null;
@@ -35,7 +24,7 @@ function InputBox() {
             <Text style={styles.innerText1}>Get groceries & food delivered</Text>
             <Text style={styles.innerText}>Login Or SignUp to place your order</Text>
           </View>
-          <View style={{ flex: 1, flexDirection: "row"}} >
+          <View style={{ flex: 1, flexDirection: "row" }}>
             <TextInput
               style={styles.input}
               //  onChangeText={text => setText(text)}
@@ -44,7 +33,7 @@ function InputBox() {
               keyboardType="numeric"
               maxLength={10}
               placeholderTextColor='#4E4E4E'
-              
+
             />
             <TouchableOpacity style={styles.Inputbutton}>
               <AntDesign style={{ marginTop: 9 }} name="arrowright" size={24} color="#fff"
@@ -56,9 +45,9 @@ function InputBox() {
           </View>
 
           <View>
-            <Text style={styles.innerText2}>By continuing, I 
-            agree to the <Text style={styles.innerText3}>term of Use
-            <Text style={{color: "#838282"}}> &</Text> Privacy Policy</Text></Text>
+            <Text style={styles.innerText2}>By continuing, I
+              agree to the <Text style={styles.innerText3}>Terms of Use
+                <Text style={{ color: "#838282" }}> &</Text> Privacy Policy</Text></Text>
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -68,107 +57,133 @@ function InputBox() {
 
 }
 
-function Slide({ data }: any) {
-  return (
-    <View
-      style={{
-        height: windowHeight,
-        width: windowWidth,
-        backgroundColor: "",
-        justifyContent: "center",
-        alignItems: "center",
-        marginTop: 0,
-        flex: 1,
-        flexDirection: "column"
 
-      }}
-    >
-      <Image
-        source={{ uri: data.image }}
-        style={{ width: windowWidth * 1, height: windowHeight * 0.4 }}
-      />
-      {/* <Text style={{ fontSize: 18 }}>{data.title}</Text>
-      <Text style={{ fontSize: 14 }}>{data.subtitle}</Text> */}
+export default class Login extends React.Component<any, any> {
 
+  constructor({ props }: any) {
+    super(props);
+    this.state = {
+      // activeIndex:0,
+      entries: [
+        {
+          title: 'Beautiful and dramatic Antelope Canyon',
+          thumbnail: 'https://image.freepik.com/free-photo/online-communication_1098-15842.jpg',
 
-      <InputBox />
+        },
+        {
+          title: 'Earlier this morning, NYC',
+          thumbnail: 'https://image.freepik.com/free-photo/young-student-woman-wearing-denim-jacket-eyeglasses-holding-colorful-folders-showing-thumb-up-pink_176532-13861.jpg',
+        },
 
-    </View>
+        {
+          title: 'Earlier this morning, NYC',
+          thumbnail: 'https://image.freepik.com/free-photo/female-student-with-books-paperworks_1258-48204.jpg',
+        },
 
-  );
-}
+        {
+          title: 'Earlier this morning, NYC',
+          thumbnail: 'https://image.freepik.com/free-photo/smiling-young-slavic-student-girl-wearing-backpack-tenses-biceps-holds-book-notebook_141793-99885.jpg',
+        }
 
-function Login() {
-  const [index, setIndex] = useState(0);
-  const indexRef = useRef(index);
-  indexRef.current = index;
-  const onScroll = useCallback((event) => {
-    const slideSize = event.nativeEvent.layoutMeasurement.width;
-    const index = event.nativeEvent.contentOffset.x / slideSize;
-    const roundIndex = Math.round(index);
-
-    const distance = Math.abs(roundIndex - index);
-    const isNoMansLand = 0.4 < distance;
-
-    if (roundIndex !== indexRef.current && !isNoMansLand) {
-      setIndex(roundIndex);
+      ]
     }
-  }, []);
+  }
+  renderItems({ item, index, parallaxProps }: any) {
+    console.log("items", item)
 
-  // Use the index
-  useEffect(() => {
-    // console.warn(index);
-  }, [index]);
+    return (
+      <View style={styles.item}>
+        <Image
+          source={{ uri: item.thumbnail }}
+          containerStyle={styles.imageContainer}
+          style={styles.image}
+          parallaxFactor={0.4}
+          {...parallaxProps}
+        />
 
-  return (
-
-    <FlatList
-
-      data={slideList}
-      style={{ flex: 1, marginBottom: 0 }}
-      renderItem={({ item }) => {
-        return <Slide data={item} />;
-      }}
-      pagingEnabled
-      horizontal
-      showsHorizontalScrollIndicator={true}
-      onScroll={onScroll}
-
-    />
+        <TouchableOpacity>
+          <Text numberOfLines={2}>
+            {/* {item.title} */}
+          </Text>
+        </TouchableOpacity>
 
 
 
 
+      </View>
 
-  );
+    );
+  }
+
+
+  render() {
+
+    return (
+
+      <View style={{ flex: 1, flexDirection: 'column' }}>
 
 
 
+        <View style={{ flex: 2, flexDirection: 'column', backgroundColor: '#F8F9F4' }}>
+          <View>
+            <Image style={{ width: 150, marginTop: 20, alignSelf: "center", height: 60 }} source={require('../assets/img/logo.png')} />
+          </View>
+          <Carousel
+            sliderWidth={screenWidth}
+            sliderHeight={screenWidth}
+            itemWidth={screenWidth - 60}
+            data={this.state.entries}
+            renderItem={this.renderItems}
+            hasParallaxImages={true}
+          />
+        </View>
+        <Image style={{ maxWidth: 500, maxHeight: 16 }} source={require('../assets/img/line.jpg')} />
+        <View style={{ flex: 1, marginTop: 40, marginLeft: 20, backgroundColor: '' }}>
+          <LoginInputBox />
+        </View>
+      </View>
+
+    );
+
+  }
 }
 
 
-
-
-export default Login;
 
 const styles = StyleSheet.create({
+
+  item: {
+    width: screenWidth - 60,
+    height: screenWidth - 60,
+  },
+  imageContainer: {
+    flex: 1,
+    marginBottom: Platform.select({ ios: 0, android: 1 }), // Prevent a random Android rendering issue
+    backgroundColor: 'pink',
+    borderRadius: 8,
+  },
+  image: {
+    ...StyleSheet.absoluteFillObject,
+    resizeMode: 'cover',
+  },
+
   input: {
     height: 45,
     margin: 12,
     width: 280,
-    fontSize:18,
+    fontSize: 18,
     borderColor: "#ccc",
-    backgroundColor: "#F4F2F2",
+    backgroundColor: "#FBFBFB",
     borderWidth: 1,
-    marginTop: 0,
+    marginTop: 15,
     borderRadius: 7
   },
 
   Inputbutton: {
-    backgroundColor: '#FAFAFA',
+    backgroundColor: '#00B04E',
     width: 50,
     height: 45,
-    marginTop: 0,
+    marginTop: 15,
     alignItems: "center",
     borderRadius: 7
 
@@ -184,19 +199,19 @@ const styles = StyleSheet.create({
     color: "#838282",
     marginTop: 5,
     fontFamily: 'Montserrat-Thin',
-    fontSize: 13,
+    fontSize: 14,
   },
 
   innerText1: {
     color: "#0B0B0B",
-    fontSize: 16,
+    fontSize: 20,
     marginTop: 5,
-    fontFamily: 'Montserrat-Thin',
+    fontFamily: 'Montserrat-ExtraBold',
   },
-
+  //input text sheet
   innerText2: {
     color: "#838282",
-    fontSize: 12,
+    fontSize: 14,
     marginTop: 2,
     marginLeft: 13,
     fontFamily: 'Montserrat-Thin',
@@ -204,9 +219,8 @@ const styles = StyleSheet.create({
 
   innerText3: {
     color: "#00B04E",
-    fontSize: 12,
+    fontSize: 13,
     marginTop: 5,
-    fontFamily: 'Montserrat-Thin',
+    fontFamily: 'Montserrat-ExtraBold',
   }
-
-});
+})

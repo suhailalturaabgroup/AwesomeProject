@@ -4,7 +4,7 @@ import { createStackNavigator, StackScreenProps } from '@react-navigation/stack'
 import { RootStackParamList } from '../types';
 import { Ionicons } from '@expo/vector-icons'; 
 import { NavigationContainer, DrawerActions, StackActions, } from '@react-navigation/native';
-import MySlider from './MySlider';
+import MySlider from './Login';
 
 
 function Home() {
