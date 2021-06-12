@@ -90,7 +90,7 @@ export default class MySlider extends React.Component<any, any> {
   }
   renderItems({ item, index, parallaxProps }: any) {
     console.log("items", item)
-    console.log("parallax Props", parallaxProps)
+    
     return (
       <View style={styles.item}>
         <Image
@@ -100,12 +100,13 @@ export default class MySlider extends React.Component<any, any> {
           parallaxFactor={0.4}
           {...parallaxProps}
         />
+        
         <TouchableOpacity>
           <Text numberOfLines={2}>
             {/* {item.title} */}
           </Text>
         </TouchableOpacity>
-
+        
 
 
 
@@ -136,6 +137,7 @@ export default class MySlider extends React.Component<any, any> {
             hasParallaxImages={true}
           />
         </View>
+        <Image style={{maxWidth: 500, maxHeight:16}} source={require('../assets/img/line.jpg')} />
         <View style={{ flex: 1, marginTop: 40, marginLeft: 20, backgroundColor: '' }}>
           <LoginInputBox />
         </View>
@@ -149,6 +151,7 @@ export default class MySlider extends React.Component<any, any> {
 
 
 const styles = StyleSheet.create({
+
   item: {
     width: screenWidth - 60,
     height: screenWidth - 60,
@@ -170,7 +173,7 @@ const styles = StyleSheet.create({
     width: 280,
     fontSize: 18,
     borderColor: "#ccc",
-    backgroundColor: "#F4F2F2",
+    backgroundColor: "#FBFBFB",
     borderWidth: 1,
     marginTop: 15,
     borderRadius: 7
