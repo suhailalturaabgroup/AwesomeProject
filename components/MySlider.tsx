@@ -46,7 +46,7 @@ function LoginInputBox() {
 
           <View>
             <Text style={styles.innerText2}>By continuing, I
-              agree to the <Text style={styles.innerText3}>term of Use
+              agree to the <Text style={styles.innerText3}>Terms of Use
                 <Text style={{ color: "#838282" }}> &</Text> Privacy Policy</Text></Text>
           </View>
         </ScrollView>
@@ -67,12 +67,22 @@ export default class MySlider extends React.Component<any, any> {
       entries: [
         {
           title: 'Beautiful and dramatic Antelope Canyon',
-          thumbnail: 'https://i.imgur.com/UPrs1EWl.jpg',
+          thumbnail: 'https://image.freepik.com/free-photo/online-communication_1098-15842.jpg',
 
         },
         {
           title: 'Earlier this morning, NYC',
-          thumbnail: 'https://i.imgur.com/UPrs1EWl.jpg',
+          thumbnail: 'https://image.freepik.com/free-photo/young-student-woman-wearing-denim-jacket-eyeglasses-holding-colorful-folders-showing-thumb-up-pink_176532-13861.jpg',
+        },
+
+        {
+          title: 'Earlier this morning, NYC',
+          thumbnail: 'https://image.freepik.com/free-photo/female-student-with-books-paperworks_1258-48204.jpg',
+        },
+
+        {
+          title: 'Earlier this morning, NYC',
+          thumbnail: 'https://image.freepik.com/free-photo/smiling-young-slavic-student-girl-wearing-backpack-tenses-biceps-holds-book-notebook_141793-99885.jpg',
         }
 
       ]
@@ -80,12 +90,10 @@ export default class MySlider extends React.Component<any, any> {
   }
   renderItems({ item, index, parallaxProps }: any) {
     console.log("items", item)
-    console.log("parallaxProps", item.parallaxProps)
+    console.log("parallax Props", parallaxProps)
     return (
       <View style={styles.item}>
-        {/* <Image style={{width:400, height:200}} source={{uri: 'https://i.imgur.com/UPrs1EWl.jpg'}}/> */}
-
-        <ParallaxImage
+        <Image
           source={{ uri: item.thumbnail }}
           containerStyle={styles.imageContainer}
           style={styles.image}
@@ -164,7 +172,7 @@ const styles = StyleSheet.create({
     borderColor: "#ccc",
     backgroundColor: "#F4F2F2",
     borderWidth: 1,
-    marginTop: 0,
+    marginTop: 15,
     borderRadius: 7
   },
 
@@ -172,7 +180,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#00B04E',
     width: 50,
     height: 45,
-    marginTop: 0,
+    marginTop: 15,
     alignItems: "center",
     borderRadius: 7
 
@@ -210,6 +218,6 @@ const styles = StyleSheet.create({
     color: "#00B04E",
     fontSize: 13,
     marginTop: 5,
-    fontFamily: 'Montserrat-Thin',
+    fontFamily: 'Montserrat-ExtraBold',
   }
 })
