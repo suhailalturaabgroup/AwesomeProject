@@ -89,7 +89,7 @@ export default class Login extends React.Component<any, any> {
     }
   }
   renderItems({ item, index, parallaxProps }: any) {
-    console.log("items", item)
+    // console.log("items", item)
 
     return (
       <View style={styles.item}>

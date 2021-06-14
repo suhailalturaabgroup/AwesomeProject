@@ -1,7 +1,23 @@
 import React from 'react';
 import { View, Button, Text, StyleSheet } from 'react-native';
 // import FlatListSlider from './FlatListSlider'
+
 export default function Services({navigation }: any) {
+    let a:number = 11;
+    if(a == 10){
+        console.log("right number")
+    }else{
+
+        console.log("wrong number")
+    }
+
+let sum = (x: number , y:number ): void => {
+    console.log(x+y);
+    
+    
+}
+
+sum(10,20);
 
     // const { userId } = route.params;
     // const { userName } = route.params;

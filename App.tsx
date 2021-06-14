@@ -34,9 +34,9 @@ function App() {
    return (
     
     <NavigationContainer>    
-        <Login/>
+        {/* <Login/> */}
         
-        {/* <StackNav/> */}
+        <StackNav/>
      </NavigationContainer> 
       
    
