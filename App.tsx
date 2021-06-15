@@ -8,6 +8,7 @@ import { StackTabParamList, RootStackParamList } from './types';
 // import { Ionicons } from '@expo/vector-icons';
 import StackNav from './navigation/StackNav';
 import Login from './components/Login';
+import Home from './components/Home';
 
 
 // import { AppearanceProvider, useColorScheme } from 'react-native-appearance';
@@ -37,6 +38,7 @@ function App() {
         {/* <Login/> */}
         
         <StackNav/>
+        {/* <Home/> */}
      </NavigationContainer> 
       
    
