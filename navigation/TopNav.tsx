@@ -11,7 +11,7 @@ const Category = () => {
 
         <View>
             <View style={{flex:1, alignItems: "center", marginTop:10 }}>
-                <Image style={{maxWidth:380, borderRadius:5, height: 80}} source={require('../assets/img/grocery-sale.jpg')} />
+                <Image style={{maxWidth:380, borderRadius:5, height: 100}} source={require('../assets/img/grocery-sale.jpg')} />
             </View>
         </View>
     )

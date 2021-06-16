@@ -38,7 +38,7 @@ function App() {
         {/* <Login/> */}
         
         <StackNav/>
-        {/* <Home/> */}
+        {/* <Home/>  */}
      </NavigationContainer> 
       
    
