@@ -1,28 +1,38 @@
 import { StyleSheet } from 'react-native';
-
+ 
 export const homeStyles = StyleSheet.create({
+
+  // firstHome: {
+  //   paddingVertical: 10,
+  //   paddingHorizontal: 10,
+  //   flexDirection: "row",
+  //   justifyContent: "space-between",
+  //   alignItems: "center",
+  //   backgroundColor: "blue"
+  // },
 
     text: {
       color: "#ccc",
       fontSize: 14,
-      marginLeft: 15,
+      marginLeft: 10,
       flexShrink: 2,
-      fontFamily: "Montserrat-Thin"
+      marginTop: 0,
+      fontFamily: "Montserrat",
   
     },
   
-    text1: {
+    home: {
       color: "#fff",
       fontSize: 20,
-      marginLeft: 15,
-      marginTop: 15,
+      marginLeft:0,
+      marginTop: 10,
       flexShrink: 2,
-      fontFamily: "Montserrat-Thin"
+     
   
     },
   
     sectionStyle: {
-      fontFamily: "Montserrat-Thin",
+      fontFamily: "Montserrat",
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
@@ -41,7 +51,7 @@ export const homeStyles = StyleSheet.create({
       marginLeft: 12,
       fontSize:15,
       alignSelf: "center",
-      fontFamily: "Montserrat-Thin"
+      fontFamily: "Montserrat"
   
   
     },
@@ -50,22 +60,20 @@ export const homeStyles = StyleSheet.create({
       marginLeft: 12,
       fontSize:15,
       alignSelf: "center",
-      fontFamily: "Montserrat-Thin"
-  
-  
+      fontFamily: "Montserrat"
     },
   
     store: {
       padding: 20,
       marginLeft: 12,
       alignItems: "center",
-      fontFamily: "Montserrat-Thin"
+      fontFamily: "Montserrat"
       
   
     },
-    textIcon: {
-  
-      color: "#fff"
+    textIcon: {  
+      color: "#fff",
+      textAlign:"center"
   
     },
   
@@ -78,55 +86,53 @@ export const homeStyles = StyleSheet.create({
       marginLeft: 15
     },
   
-    base: {
-  
+    base: {  
       position: "relative",
       marginBottom:10
       
     },
     baseTop: {
-      borderBottomWidth: 40,
+      borderBottomWidth: 41,
       borderBottomColor: "transparent",
-      borderLeftWidth: 40,
+      borderLeftWidth: 41,
       borderLeftColor: "#7CB84B",
-      borderRightWidth: 40,
+      borderRightWidth: 41,
       transform: [{ rotate: '-45deg' }],
       borderRightColor: "transparent",    
-      left: 15,
-      bottom: 21,    
+      left: 14,
+      bottom: 35,    
       width: 0,
       height: 0,
+      // zIndex: -100,
       position: "absolute",
       borderRadius:8
     },
   
     baseTop1: {
-      borderBottomWidth: 40,
+      borderBottomWidth: 41,
       borderBottomColor: "transparent",
-      borderLeftWidth: 40,
+      borderLeftWidth: 41,
       borderLeftColor: "#7CB84B",
-      borderRightWidth: 40,
+      borderRightWidth: 41,
       transform: [{ rotate: '-225deg' }],
       borderRightColor: "transparent",
-      left: 319,
+      left: 318,
       bottom: 20,
-      top:21,
+      top:5,
       width: 0,
       height: 0,
       position: "absolute",
       borderRadius:8,
-     
+      // zIndex: -100,
     },
     baseBottom: {
       backgroundColor: "#7CB84B",
       height: 55,
       left:39,
       width: 335,
+      bottom:15,
       borderRadius:2,
-      zIndex: -100,
-     
-      
-      
+      // zIndex: -10,   
     },
   
     shapeText: {
@@ -134,8 +140,7 @@ export const homeStyles = StyleSheet.create({
       marginLeft: 50,
       color: "#fff",
       fontSize:16,
-      top:15,
-      
+      top:2    
      
     },
   
@@ -144,7 +149,47 @@ export const homeStyles = StyleSheet.create({
       position: "absolute",
       color: "#fff",
       fontSize:16,
-      top:15
+      top:2
+    },
+
+    heading: {
+      fontSize: 24,
+      color: "#fff",
+      margin: 10
+    },
+
+
+    list: {
+      color: "#fff",
+      marginLeft: 10,
+      lineHeight: 28
+    },
+
+    shadow: {
+      backgroundColor: "#6C6CB6",
+       marginLeft: 15, marginTop: 8, 
+       width: 380, height: 32, 
+       alignItems: "center" 
+    },
+    
+    shadowText :{ color: "#FFF3AF", marginTop: 8, textTransform: 'uppercase' },
+
+    button : {       
+      backgroundColor: "#fff",
+      width:380,
+      padding:10,
+      borderRadius:5,
+      marginTop:15,
+      paddingVertical: 10,
+      paddingHorizontal: 10,
+      flexDirection: "row",
+      justifyContent: "center",
+      alignItems: "center",
+      marginLeft:18
+    },
+
+    textButton: {
+      color: "#533D9D", fontSize: 16
     }
   
   

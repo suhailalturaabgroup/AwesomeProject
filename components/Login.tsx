@@ -7,7 +7,7 @@ const { width: screenWidth } = Dimensions.get('window')
 
 function LoginInputBox() {
   const [loaded] = useFonts({
-    Montserrat: require('../assets/fonts/Montserrat-Thin.ttf')
+    loginFonts: require('../assets/fonts/Montserrat-Regular.ttf')
   });
 
 
@@ -47,7 +47,7 @@ function LoginInputBox() {
           <View>
             <Text style={styles.innerText2}>By continuing, I
               agree to the <Text style={styles.innerText3}>Terms of Use
-                <Text style={{ color: "#838282" }}> &</Text> Privacy Policy</Text></Text>
+                <Text style={{ color: "#838282" }}> &#38;</Text> Privacy Policy</Text></Text>
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -106,10 +106,6 @@ export default class Login extends React.Component<any, any> {
             {/* {item.title} */}
           </Text>
         </TouchableOpacity>
-
-
-
-
       </View>
 
     );
@@ -186,7 +182,6 @@ const styles = StyleSheet.create({
     marginTop: 15,
     alignItems: "center",
     borderRadius: 7
-
   },
 
   text: {
@@ -198,7 +193,7 @@ const styles = StyleSheet.create({
   innerText: {
     color: "#838282",
     marginTop: 5,
-    fontFamily: 'Montserrat-Thin',
+    fontFamily: 'loginFonts',
     fontSize: 14,
   },
 
@@ -206,7 +201,8 @@ const styles = StyleSheet.create({
     color: "#0B0B0B",
     fontSize: 20,
     marginTop: 5,
-    fontFamily: 'Montserrat-ExtraBold',
+    // backgroundColor: "red",
+    fontFamily: 'loginFonts',
   },
   //input text sheet
   innerText2: {
@@ -214,13 +210,13 @@ const styles = StyleSheet.create({
     fontSize: 14,
     marginTop: 2,
     marginLeft: 13,
-    fontFamily: 'Montserrat-Thin',
+    fontFamily: 'loginFonts',
   },
 
   innerText3: {
     color: "#00B04E",
     fontSize: 13,
     marginTop: 5,
-    fontFamily: 'Montserrat-ExtraBold',
+    fontFamily: 'loginFonts',
   }
 })

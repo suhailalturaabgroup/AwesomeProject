@@ -39,3 +39,25 @@ const styles = StyleSheet.create({
 });
 
 export default Slider;
+
+
+  {/* <FlatList horizontal
+                    data={DATA}
+                    renderItem={({ item }) =>
+                        <View style={{ flex: 1, flexDirection: "row", marginTop: 10 }}>
+                            <View style={styles.list}>
+                                <Text>ffdsf</Text>
+                            </View>
+                            <View style={styles.list1}>
+                                <Text>sffds</Text>
+                            </View>
+                            <View style={styles.list2}>
+                                <Text>sffds</Text>
+                            </View>
+                        </View>
+
+                    }
+                    keyExtractor={item => item.id}
+
+
+                /> */}
