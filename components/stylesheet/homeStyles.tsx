@@ -2,24 +2,54 @@ import { StyleSheet } from 'react-native';
  
 export const homeStyles = StyleSheet.create({
 
-  // firstHome: {
-  //   paddingVertical: 10,
-  //   paddingHorizontal: 10,
-  //   flexDirection: "row",
-  //   justifyContent: "space-between",
-  //   alignItems: "center",
-  //   backgroundColor: "blue"
-  // },
+  homeIcon: {
+    paddingVertical: 5,
+    paddingHorizontal: 0,
+    flexDirection: "row",
+    alignSelf:"center"
+        
+    },
 
-    text: {
+    logo :{
+      width: 120,
+      marginLeft: 140,
+      height: 50,
+      marginTop:10
+    },
+
+    homeIcon1: {
+      paddingVertical: 2,
+      paddingHorizontal: 0,
+      flexDirection: "row",
+      marginBottom: 10,      
+      alignSelf:"center"
+      },
+
+      homeIcon2: {
+        paddingVertical: 2,
+        paddingHorizontal: 0,
+        flexDirection: "row",
+        marginTop:0,
+        alignSelf:"center"
+            
+        },
+
+  homeTopHeading: {
       color: "#ccc",
       fontSize: 14,
       marginLeft: 10,
       flexShrink: 2,
-      marginTop: 0,
       fontFamily: "Montserrat",
   
     },
+
+
+    homeArrow: {
+      paddingVertical: 15,
+      paddingHorizontal: 0,
+      flexDirection: "row",
+      fontFamily: "Montserrat"
+      },
   
     home: {
       color: "#fff",
@@ -51,32 +81,38 @@ export const homeStyles = StyleSheet.create({
       marginLeft: 12,
       fontSize:15,
       alignSelf: "center",
-      fontFamily: "Montserrat"
-  
-  
-    },
+      fontFamily: "Montserrat",
+      
+      
+  },
+
+
     subscribe: {
       padding: 20,
       marginLeft: 12,
       fontSize:15,
       alignSelf: "center",
       fontFamily: "Montserrat"
+      
+     
     },
   
     store: {
       padding: 20,
       marginLeft: 12,
       alignItems: "center",
-      fontFamily: "Montserrat"
+      fontFamily: "Montserrat",
+      paddingBottom :5
+     
       
   
     },
     textIcon: {  
       color: "#fff",
-      textAlign:"center"
-  
+      textAlign:"center",
+      paddingBottom :5  
     },
-  
+ 
     playBox: {
       backgroundColor: "#007366",
       width: 55,
@@ -172,7 +208,11 @@ export const homeStyles = StyleSheet.create({
        alignItems: "center" 
     },
     
-    shadowText :{ color: "#FFF3AF", marginTop: 8, textTransform: 'uppercase' },
+    shadowText :{ 
+      color: "#FFF3AF",
+       marginTop: 8, 
+       textTransform: 'uppercase'
+      },
 
     button : {       
       backgroundColor: "#fff",

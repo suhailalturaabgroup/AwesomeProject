@@ -4,6 +4,7 @@ import {
   FlatList, StyleSheet, Image, Text, StatusBar
 } from 'react-native';
 import { useFonts } from 'expo-font';
+import {styles} from '../stylesheet/homeTwo';
 
 // const data = [
 //   {
@@ -31,7 +32,7 @@ import { useFonts } from 'expo-font';
 // ];
 
 
-const Home2 = () => {
+const HomeTwo = () => {
   const [loaded] = useFonts({
     Home2Montserrat: require('../../assets/fonts/Montserrat-Regular.ttf')
   });
@@ -90,8 +91,8 @@ const Home2 = () => {
             </View>
             <View>
               <Text style={styles.text}>Snack Maina(12)</Text>
-              <Text style={styles.text2}>Pringles, Namdhari Cashew Nuts, Milk, Bread, \nCocacola & More...</Text>
-              <Text style={styles.text3}>Weekly   Monday   7:00 AM</Text>
+              <Text style={styles.textTwo}>Pringles, Namdhari Cashew Nuts, Milk, Bread, \nCocacola & More...</Text>
+              <Text style={styles.textThree}>Weekly   Monday   7:00 AM</Text>
             </View>
           </View>
         </View>
@@ -116,8 +117,8 @@ const Home2 = () => {
             </View>
             <View>
               <Text style={styles.text}>Snack Maina(12)</Text>
-              <Text style={styles.text2}>Pringles, Namdhari Cashew Nuts, Milk, Bread, \nCocacola & More...</Text>
-              <Text style={styles.text3}>Weekly   Monday   7:00 AM</Text>
+              <Text style={styles.textTwo}>Pringles, Namdhari Cashew Nuts, Milk, Bread, \nCocacola & More...</Text>
+              <Text style={styles.textThree}>Weekly   Monday   7:00 AM</Text>
             </View>
           </View>
         </View>
@@ -127,103 +128,5 @@ const Home2 = () => {
   );
 }
 
-const styles = StyleSheet.create({
 
-  list: {
-    flex: 1,
-    flexDirection: "row",
-    backgroundColor: "#fff",
-    padding: 8,
-    margin: 8,
-    marginTop: 0,
-    fontFamily: "Home4Montserrat"
-
-  },
-
-  list1: {
-    // backgroundColor: "",
-    width: 230,
-    height: 220,
-    marginLeft: 0,
-    paddingLeft: 0,
-    borderRadius: 5,
-    top: 5,
-    // flex:1,
-    flexDirection: "column",
-    fontFamily: "Home4Montserrat"
-
-  },
-  container: {
-    flex: 1,
-    marginTop: StatusBar.currentHeight || 0,
-    backgroundColor: "#533D9D",
-    fontFamily: "Home2Montserrat"
-  },
-  item: {
-    backgroundColor: '#f9c2ff',
-    padding: 0,
-    marginLeft: 5,
-    marginVertical: 8,
-    marginHorizontal: 10,
-    fontFamily: "Home2Montserrat"
-  },
-
-  menuItem: {
-    flex: 1,
-    flexDirection: "row",
-    width: 230,
-    padding: 5,
-    height: 230,
-    backgroundColor: "#fff",
-    borderRadius: 5,
-    margin: 0
-
-  },
-
-  text: {
-    fontSize: 15,
-    fontWeight: "bold",
-    // textAlign: "left",
-    fontFamily: "Home2Montserrat",
-    position: "absolute",
-    marginLeft: 10,
-    color: "#000",
-    marginTop: 10,
-
-
-  },
-
-  text2: {
-    fontSize: 13,
-    fontFamily: "Home2Montserrat",
-    position: "absolute",
-    marginLeft: 10,
-    color: "gray",
-    marginTop: 30,
-  },
-
-  text3: {
-    fontSize: 13,
-    fontFamily: "Home2Montserrat",
-    position: "absolute",
-    color: "#CB8200",
-    marginTop: 80,
-    marginLeft: 10,
-    backgroundColor: '#FDF3E8',
-    fontWeight: "900"
-
-  },
-
-  text4: {
-    fontSize: 13,
-    fontFamily: "Home2Montserrat",
-    position: "absolute",
-    color: "#D4972C",
-    marginTop: 135,
-    marginLeft: 10,
-    backgroundColor: '#FDF3E8'
-
-  },
-});
-
-export default Home2;
+export default HomeTwo;
